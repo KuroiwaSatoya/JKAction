@@ -32,9 +32,9 @@ BackGround::BackGround() {
     mountainLoopX = 0.0f;
 }
 
-void BackGround::Update(Camera& camera){
+void BackGround::Update(){
 
-    backGroundX = camera.GetCameraX();
+    backGroundX = camera->GetCameraX();
 
     // ”wŒi‚Ì•\Ž¦ˆÊ’u‚ðŒˆ’è (ƒ‹[ƒv—p)
     loopX = fmod(backGroundX, widthBackGround); // backGroundX % widthBackGround¨float‚É
@@ -45,10 +45,10 @@ void BackGround::Update(Camera& camera){
 
 }
 
-void BackGround::Display(Camera& camera, bool title, bool gameScene) {
+void BackGround::Display() {
 
     // ƒ^ƒCƒgƒ‹‰æ–Ê‚È‚ç
-    if (title) {
+    if (scene->GetType() == Scene::SceneType::TITLE) {
         // ƒ^ƒCƒgƒ‹‰æ–Ê‚Ì•`‰æ
         DrawGraphF(
             SCREEN_ORIGIN_X,    // •`‰æ‚·‚é‰æ‘œ‚Ì¶ã‚ÌXÀ•W
@@ -57,7 +57,7 @@ void BackGround::Display(Camera& camera, bool title, bool gameScene) {
             FALSE);             // “§‰ß‚·‚é‚©‚Ç‚¤‚©
     }
     //ƒQ[ƒ€‰æ–Ê‚È‚ç
-    else if (gameScene) {
+    else if (scene->GetType() == Scene::SceneType::GAME) {
 
         // ‹ó‚Ì•`‰æ
         DrawGraphF(SCREEN_ORIGIN_X, SCREEN_ORIGIN_Y, imageBackGroundSky, FALSE);

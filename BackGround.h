@@ -1,16 +1,21 @@
 #pragma once
 #include "GameManagerMain.h"
 #include "Camera.h"
+#include "Scene.h"
 
 class BackGround : public GameManager {
 public:
 	BackGround();
 
 	// 背景の制御
-	void Update(Camera& camera);
+	void Update() override ;
 
 	// 背景の描画
-	void Display(Camera& camera, bool title, bool gameScene);
+	void Display() override ;
+
+	void SetCamera(Camera* _camera) { camera = _camera; }
+
+	void SetScene(Scene* _scene) { scene = _scene; }
 
 private:
 
@@ -38,5 +43,8 @@ private:
 	float backGroundX,				// 背景の移動量
 		loopX,						// ループ用
 		mountainLoopX;				// 山は1/2の速度でループするため山用のループ変数を用意
+
+	Camera* camera = nullptr;		// Cameraを保持
+	Scene* scene = nullptr;			// Sceneを保持
 
 };

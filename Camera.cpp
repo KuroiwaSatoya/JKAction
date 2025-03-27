@@ -1,8 +1,8 @@
 #include "Camera.h"
 
-Camera::Camera(Player& player) {
+Camera::Camera() {
 
-	firstCameraX = player.GetFirstPositionX(); // カメラのX座標
+	firstCameraX = player->GetFirstPositionX(); // カメラのX座標
 	cameraX = firstCameraX;
 
 	/*カメラと言っても画面が移動しているわけではなく
@@ -10,9 +10,9 @@ Camera::Camera(Player& player) {
 	プレイヤーの動きとは反対に動いているだけ*/
 }
 
-void Camera::Update(Player& player) {
+void Camera::Update() {
 
 	// プレイヤーの移動量に合わせてカメラを動かす
-	cameraX = player.GetX() - firstCameraX;
+	cameraX = player->GetX() - firstCameraX;
 
 }

@@ -1,10 +1,13 @@
 #pragma once
 #include "PlayerMain.h"
 
-class UI {
+class UI : public GameManager {
 public:
 	UI(Player& player);
-	void DisplayGameUI(Player& player);
+
+	void Update() override;
+
+	void Display() override;
 
 private:
 
@@ -25,4 +28,3 @@ private:
 
 	int playerHp, maxPlayerHp;
 };
-#pragma once

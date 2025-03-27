@@ -1,13 +1,16 @@
 #pragma once
+#include "GameManagerMain.h"
 #include "PlayerMain.h"
 
-class UI : public GameManager {
+class UI : public GameManagerMain {
 public:
 	UI(Player& player);
 
-	void Update() override;
+	void Update() override ;
 
-	void Display() override;
+	void Display() override ;
+
+	void SetPlayer(Player* _player) { player = _player; }
 
 private:
 
@@ -27,4 +30,6 @@ private:
 	int width, height;
 
 	int playerHp, maxPlayerHp;
+
+	Player* player = nullptr;
 };

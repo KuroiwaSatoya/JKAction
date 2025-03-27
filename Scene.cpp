@@ -6,7 +6,7 @@ Scene::Scene() {
 
 }
 
-void Scene::Update() override {
+void Scene::Update() {
 
     //エンターキーを押したらGAMEシーンになる
     if (type == SceneType::TITLE) {
@@ -18,4 +18,8 @@ void Scene::Update() override {
         // ゲームシーン中にシーンを切り替えたい場合があったら
         // ここを書き換える
     }
+}
+
+void Scene::Display() {
+
 }

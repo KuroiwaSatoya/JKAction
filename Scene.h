@@ -1,7 +1,7 @@
 #pragma once
 #include "GameManagerMain.h"
 
-class Scene : public GameManager {
+class Scene : public GameManagerMain {
 public:
 	Scene();
 

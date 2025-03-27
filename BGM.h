@@ -1,7 +1,8 @@
 #pragma once
+#include "GameManagerMain.h"
 #include "Scene.h"
 
-class BGM : public GameManager {
+class BGM : public GameManagerMain {
 public:
 	BGM();
 
@@ -9,8 +10,10 @@ public:
 
 	void Display() override;
 
-	//void Update(Scene& scene);
+	void SetScene(Scene* _scene) { scene = _scene; }
 
 private:
 	int titleBgm, gameBgm;
+
+	Scene* scene = nullptr; // Scene‚Ì•Û
 };

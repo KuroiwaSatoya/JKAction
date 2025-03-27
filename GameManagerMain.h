@@ -1,8 +1,8 @@
 #pragma once
 
-class GameManager {
+class GameManagerMain {
 public:
-    virtual ~GameManager() = default;
+    virtual ~GameManagerMain() = default;
     virtual void Update() = 0;        // ƒˆ‰¼‘zŠÖ”
     virtual void Display() = 0;       // ƒˆ‰¼‘zŠÖ”
 };

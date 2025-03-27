@@ -8,10 +8,10 @@ BGM::BGM() {
     gameBgm = LoadSoundMem("Sounds/Game.mp3");
 }
 
-void BGM::Update(Scene& scene) {
+void BGM::Update() {
 
     // タイトルシーンだったら
-    if (scene.GetType() == Scene::SceneType::TITLE) {
+    if (scene->GetType() == Scene::SceneType::TITLE) {
         if (CheckHitKey(KEY_INPUT_RETURN)) { // ←これシーンが切り替わったらにできるんじゃ？
             if (CheckSoundMem(titleBgm) == FALSE) {
                 StopSoundMem(gameBgm);
@@ -20,10 +20,14 @@ void BGM::Update(Scene& scene) {
         }
     }
     // ゲームシーンだったら
-    else if (scene.GetType() == Scene::SceneType::GAME) {
+    else if (scene->GetType() == Scene::SceneType::GAME) {
         if (CheckSoundMem(gameBgm) == FALSE) {
             StopSoundMem(titleBgm);
             PlaySoundMem(gameBgm, DX_PLAYTYPE_LOOP);
         }
     }
+}
+
+void BGM::Display() {
+
 }

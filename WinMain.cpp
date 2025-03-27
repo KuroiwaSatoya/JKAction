@@ -250,3 +250,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	// ソフトの終了 
 	return 0;
 }
+
+/* void DisplayGameManager(GameManager& gameManager){ gameManager->Display() }
+これを呼び出すと→ DisplayGameManager(&Camera) →仮想関数なのでこれでカメラのDisplayが起動する
+(仮想関数でない場合は親クラス(GameManagerのDisplayが起動する))*/

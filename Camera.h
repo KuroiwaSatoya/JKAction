@@ -2,9 +2,9 @@
 #include "GameManagerMain.h"
 #include "PlayerMain.h"
 
-class Camera : public GameManager {
+class Camera : public GameManagerMain {
 public:
-	Camera();
+	Camera(Player& player);
 
 	void Update() override;
 

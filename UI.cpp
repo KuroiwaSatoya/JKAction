@@ -37,12 +37,16 @@ UI::UI(Player& player) {
 
 }
 
-void UI::DisplayGameUI(Player& player) {
+void UI::Update() {
+
+}
+
+void UI::Display() {
 
     // Playerの体力のUI
     float hpRate = 0;
 
-    playerHp = player.GetHitPoint();
+    playerHp = player->GetHitPoint();
 
     if (playerHp >= 0) {
         hpRate = max(0.0f, (float)playerHp / (float)maxPlayerHp);
@@ -60,13 +64,13 @@ void UI::DisplayGameUI(Player& player) {
 
 
     // ゴール文字表記
-    if (player.GetIsGoal()) {
+    if (player->GetIsGoal()) {
         DrawGraphF(0, 0, goalImage, TRUE);
         DrawStringFToHandle(gameEndTextCenterX, gameEndTextCenterY, gameEndText, GetColor(255, 255, 255), font, GetColor(0, 0, 0));
     }
 
     // ゲームオーバー文字表記
-    if (player.GetIsDead()) {
+    if (player->GetIsDead()) {
         DrawGraphF(0, 0, gameOverImage, TRUE);
         DrawStringFToHandle(gameEndTextCenterX, gameEndTextCenterY, gameEndText, GetColor(255, 255, 255), font, GetColor(0, 0, 0));
     }

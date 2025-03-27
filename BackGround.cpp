@@ -32,7 +32,7 @@ BackGround::BackGround() {
     mountainLoopX = 0.0f;
 }
 
-void BackGround::Update(Camera& camera) {
+void BackGround::Update(Camera& camera){
 
     backGroundX = camera.GetCameraX();
 

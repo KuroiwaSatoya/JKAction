@@ -1,5 +1,5 @@
 #pragma once
-#include "GameManagerMain.h"
+#include "PlayerMain.h"
 
 class Camera {
 public:

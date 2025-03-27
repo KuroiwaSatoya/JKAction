@@ -2,7 +2,7 @@
 #include "GameManagerMain.h"
 #include "Camera.h"
 
-class BackGround {
+class BackGround : public GameManager {
 public:
 	BackGround();
 
